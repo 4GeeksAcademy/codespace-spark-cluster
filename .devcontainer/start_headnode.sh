@@ -7,9 +7,9 @@
 # localhost port 7077.
 
 git pull
-echo $CODESPACE_NAME > .devcontainer/headnode_hostname
+echo $CODESPACE_NAME > .headnode_hostname
 git add .devcontainer/headnode_hostname
-git commit -m "Updated headnode hostname"
+git commit -m "Auto-update of headnode hostname."
 git push origin main
 sudo /opt/spark/sbin/start-master.sh --port 7077 --host localhost --webui-port 8080
 sudo /opt/spark/sbin/start-worker.sh localhost:7077 --webui-port 8081
